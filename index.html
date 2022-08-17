@@ -14,8 +14,47 @@
 </head>
 
 <body>
+  <div class="background">
+    <!-- CSS BG -->
+  </div>
 
-  <h1>hello</h1>
+  <main>
+    <section class="files-component">
+      <figure class="logo">
+        <img src="./images/logo.svg" alt="fylo logo">
+      </figure>
+      <div class="btns-wrapper">
+        <button class="ops-btn new-file">
+          <img src="./images/icon-document.svg" alt="new file icon">
+        </button>
+        <button class="ops-btn open-file">
+          <img src="./images/icon-folder.svg" alt="open file icon">
+        </button>
+        <button class="ops-btn upload-file">
+          <img src="./images/icon-upload.svg" alt="upload file icon">
+        </button>
+      </div>
+    </section>
+
+    <section class="storage-component">
+      <p class="text">You've used <span id="space-used">815 GB</span> of your storage</p>
+      <div class="slider-wrapper">
+        <input type="range" min="0" max="1000" value="100" class="slider" id="storage-range">
+        <div class="wrapper">
+          <p>0 GB</p>
+          <p>1000 GB</p>
+        </div>
+      </div>
+      <section class="modal">
+        <p><span class="space-left">185</span>gb left</p>
+      </section>
+    </section>
+
+
+  </main>
+
+
+
 </body>
 
 </html>
