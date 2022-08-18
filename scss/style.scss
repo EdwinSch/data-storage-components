@@ -76,7 +76,6 @@ main {
     }
 
     .storage-component {
-        position: relative;
         width: 550px;
         height: 160px;
         background-color: $blue;
@@ -96,6 +95,7 @@ main {
         }
 
         .slider-wrapper {
+
             .slider {
                 -webkit-appearance: none;
                 appearance: none;
@@ -138,36 +138,105 @@ main {
             }
         }
 
-        .modal {
-            position: absolute;
-            top: -50px;
-            right: 40px;
-            width: 180px;
-            height: 70px;
-            background-color: white;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .flex-wrapper {
+            position: relative;
 
-            p {
+            .modal {
+                position: absolute;
+                transform: translate(290px, -165px);
+                width: 180px;
+                height: 70px;
+                background-color: white;
+                border-radius: 10px 10px 0px 10px;
                 display: flex;
+                justify-content: center;
                 align-items: center;
-                font-size: 13px;
-                text-transform: uppercase;
-                font-weight: 700;
-                color: #94959a;
-            }
 
-            .space-left {
-                font-size: 34px;
-                margin-right: 10px;
-                color: black;
-                font-weight: 700;
+                p {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: #94959a;
+                }
+
+                .space-left {
+                    font-size: 34px;
+                    margin-right: 10px;
+                    color: black;
+                    font-weight: 700;
+                }
             }
+        }
+
+        .modal::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            clip-path: polygon(0 0, 100% 100%, 100% 0);
+            transform: translate(80px, 45px);
+            background-color: white;
         }
     }
 
+}
 
 
+/* RESPONSIVE TABLET */
+@media screen and (max-width: 1000px) {
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        .storage-component {
+            .flex-wrapper {
+                display: flex;
+                justify-content: center;
+
+                .modal {
+                    transform: translate(0px, 10px);
+                    border-radius: 10px 10px 10px 10px;
+                }
+
+                .modal::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 550px) {
+    .background {
+        height: 100vh;
+        background-image: url('../images/bg-mobile.png');
+    }
+
+    main {
+        margin: 0px 20px;
+
+        .files-component {
+            width: 100%;
+        }
+
+        .storage-component {
+            width: 100%;
+
+            .text {
+                text-align: center;
+            }
+
+            .flex-wrapper {
+                .modal {
+                    transform: translate(0, 10px);
+                }
+            }
+
+        }
+    }
 }
