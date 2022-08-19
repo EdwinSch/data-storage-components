@@ -95,36 +95,63 @@ main {
         }
 
         .slider-wrapper {
+            margin-top: 10px;
 
-            .slider {
+            .slider,
+            input[type=range] {
                 -webkit-appearance: none;
-                appearance: none;
                 width: 100%;
-                height: 17px;
                 background: $darkBlue;
-                // background: linear-gradient(hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) 100%);
                 outline: none;
                 margin-bottom: 8px;
                 border-radius: 20px;
             }
 
-            .slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
-                background: white;
-                cursor: pointer;
+            // --- Chrome & Safari webkits --- 
+            .slider::-webkit-slider-runnable-track {
+                height: 16px;
+                background: linear-gradient(90deg, hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) 100%);
+                // margin-right: 20%;
+                border-radius: 20px;
             }
 
-            .slider::-moz-range-thumb {
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
                 width: 15px;
                 height: 15px;
                 border-radius: 50%;
                 background: white;
                 cursor: pointer;
+                transition: 0.3s ease;
             }
+
+            .slider::-webkit-slider-thumb:hover {
+                transform: scale(1.3);
+            }
+
+            // --- Firefox webkits --- 
+            input[type=range]::-moz-range-track {
+                height: 16px;
+                background: linear-gradient(90deg, hsl(6, 100%, 80%) 0%, hsl(335, 100%, 65%) 100%);
+                margin-right: 20%;
+                border-radius: 20px;
+            }
+
+            input[type=range]::-moz-range-thumb {
+                -webkit-appearance: none;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background: white;
+                cursor: pointer;
+                transition: 0.3s ease;
+            }
+
+            input[type=range]::-moz-range-thumb:hover {
+                transform: scale(1.3);
+            }
+
+            // --- END of webkits --- 
 
             .wrapper {
                 display: flex;
@@ -229,6 +256,7 @@ main {
 
             .text {
                 text-align: center;
+                font-size: 14px;
             }
 
             .flex-wrapper {

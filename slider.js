@@ -9,8 +9,9 @@ pushValues();
 
 
 // update values on slider input
-slider.addEventListener("input", function () {
+slider.addEventListener("input", function (event) {
     pushValues();
+
 });
 
 
